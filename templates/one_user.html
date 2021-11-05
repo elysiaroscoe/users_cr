@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <title>User {{ user.id }}</title>
+</head>
+<body>
+    <h1>User {{ user.id }}</h1>
+    <div>
+        <table>
+            <tr>
+                <td>Full Name: </td>
+                <td>{{ user.first_name }} {{user.last_name}}</td>
+            </tr>
+            <tr>
+                <td>Email: </td>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <td>Created On: </td>
+                <td>{{ user.created_at }}</td>
+            </tr>
+            <tr>
+                <td>Last Updated On: </td>
+                <td>{{ user.updated_at }}</td>
+            </tr>
+        </table>
+    </div>
+    <a href="/users" class="btn btn-primary active">Home page</a>
+    <a href="/users/{{user.id}}/edit" class="btn btn-primary active">Edit this user</a>
+    <a href="/users/{{user.id}}/delete" class="btn btn-primary active">Delete this user</a>
+</body>
+</html>
